@@ -1,0 +1,187 @@
+<head>
+	<title>Part3</title>
+</head>
+
+<html>
+<head>
+<style> 
+.text
+{
+	border-radius: 3px; 
+	height: 30px;
+} 
+.textarea
+{
+	border-radius: 3px; 
+	height:100px;
+} 
+
+.submit
+{ 
+	background-color: #17BCC3 ;
+    border: 1px;
+    border-radius: 3px;
+	width: 25%;
+	height: 30px;
+ 
+} 
+.select
+{
+	border-radius: 3px; 
+	height: 30px;
+}
+hr.new1 {
+  border: 1px solid black;
+}
+</style> 
+
+</head> 
+<body>
+<h3>Part 3: form 2</h3>
+<table border = "0" width= "100%"> 
+	<tr>
+		<td colspan= "2" > <hr class="new1" style= "width:100%;"> </td> </hr> 
+	</tr>  
+	<tr> 
+		<td colspan = "2"><b style="font-size:25px;"> Select the type of Gift Card</b>
+		<hr class="new1" width = "100%"> </hr>  </td>	
+	</tr> 
+	
+	<tr> <form> 	
+		<td width= "50%"> 
+		<input type="radio" name="GiftCard" value="p">Physical Gift Card 
+		<pre><p style="font-size:18px;">&nbsp;&nbsp;&nbsp;A traditional gift card that is personalised and delivered to 
+   the recipient's doorstep.It can be used both onliine and in-store.</p></pre> 
+		
+		</td>
+			<td width= "50%"> <input type= "radio" name="GiftCard" value="d">Digital Gift Card 
+			<pre><p style= "font-size: 18px;">&nbsp;&nbsp;&nbsp;Digital Cards are sent by email withhin minutes 
+   and can be redeemed both instores and online.</p></pre></form> 		
+		</td> 			
+	</tr> 
+	
+	<tr> <td colspan= "2"> <hr class="new1" width = "100%"> </hr> </td>	</tr> 
+	
+	<tr> 
+		<td colspan ="2"> <b style= "font-size: 25px;">Personalise your Gift Card</b> </td> 		
+	</tr> 
+	<tr> <td colspan= "2" > <hr width = "100%" > </td> </tr> 
+	
+	<tr>  <form> 
+		<td colspan = "2" style= "font-size: 18px;">Gift Card Value
+		<input type="text" class="text" name="cardvalue" size="20"> eg;100 
+		<br/> </form> </td> 		
+	</tr>
+	<tr> <td colspan= "2" > <hr width = "100%" > </td> </tr> 
+
+	<tr> <form> 
+		<td> 
+		<p style="font-size:18px;">Name &nbsp;&nbsp;&nbsp;
+		<input type="text" class= "text" name= "name" size="50"></td></form>
+			<td><b style= "font-size: 25px;">Payment</b></td>		
+	</tr> 
+	
+	<tr> <form> 
+		<td> <p style= "font-size: 18px;"> To Email 
+		<input type="text" class= "text" name="email" size="50"> </p> </td> </form>
+			<td> <form> <p style= "font-size: 18px;">Card Type </p>	
+				<select name="cardtype" style="width:200px;"> 
+					<option value= "Visa">Visa</option> 
+					<option value= "Master">Master</option>
+					<option value= "Net">Net</option> </select> </form> 
+			</td>
+	</tr> 		
+	
+	<tr>
+		<td rowspan= "3" ><p style= "font-size: 18px;">Postal address<br/> 		
+		<textarea class= "textarea" name="address" rows= "5" cols= "60" > </textarea></td> 
+			<td> <form> 
+				<p style= "font-size: 18px;">Card Number </p>   
+				<input type="text" class= "text" name="cardNo" size="50"></form></td> 
+	</tr>
+	
+	<tr> 	
+		<td> <p style="font-size:18px;">Valid to</p> 
+		<form> 
+			<select class= "select" name="date" style="width: 100px;" >
+				<option value="01">01</option> 
+				<option value="02">02</option>
+				<option value="03">03</option> 
+				<option value="04">04</option> 
+				<option value="05">05</option> 
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option></select> 
+				<i style="font-size:18px;">/</i>	
+				<select class= "select" name="year" style="width:120px;" >
+				<option value="2009">2009</option>
+				<option value="2010">2010</option> 
+				<option value="2011">2011</option> 
+				<option value="2012">2012</option> 
+				<option value="2013">2013</option>
+				<option value="2014">2014</option>
+				<option value="2015">2015</option>
+				<option value="2016">2016</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2008">2020</option> </select>
+				</form> </td> 
+				</tr> 
+				
+				<tr> 
+				<td> <p style= "color:grey; font-size:18px;" > mm/yyyy </p></td> 		
+				</tr>
+	
+	<tr> 
+		<td rowspan= "2" > <p style= "font-size: 18px;">Custom greeting<br/> 		
+		<textarea class= "textarea" name="greeting" rows= "5" cols= "60"> </textarea>
+		</form></td> 
+	</tr> 
+		
+	<tr> 
+		<td> <p style= "font-size:18px;">Name on card </p>   
+		<form action="Buy" method="post" > 
+		<input type = "text" class= "text" name="CardName" size="50">
+		<p style="font-size:18px;">CVV2 Number</p> 
+		<input type= "text" class= "text" name= "CVV2" size="20"> <br/> <br/> 
+		<input type="submit" class= "submit" style= "color:white;" value="Buy now"></form> </td>
+	</tr>
+
+	<tr> <td colspan= "2"> <hr width = "100%" size= "15" > </td> </tr> 
+	
+	<tr>
+		<td> <p style= "font-size:18px;">&copy;HAY MUNN HNIN WAI </p> </td> 
+	</tr> 
+	
+</table> 	
+</body>
+</html> 	
+		
+	
+	
+	
+	
+				
+				
+
+
+	
+		
+		
+		
+		
+		
+		
+		
+		 
+		
+		
+		
+	
+	
+	

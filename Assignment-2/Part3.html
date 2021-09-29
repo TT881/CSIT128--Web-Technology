@@ -1,0 +1,116 @@
+<h3> Part-3 </h3> 
+<html> 
+<style> 
+input[type= "submit"]
+{ 
+	background-color: #17BCC3 ;
+    border: 1px;
+    border-radius: 3px;
+	width: 10%;
+	height: 30px;
+	color : white;
+ 
+} 
+input[type="text"]
+{
+	border-radius: 3px; 
+	height: 40px;
+	width : 30%
+} 
+</style> 
+
+<body>
+<form action="myService" onSubmit= "return validateForm()" > 
+<pre> 
+<label>Customer name: </label>
+<input type = "text" id="name" name ="name" placeholder= "Jhon Doe"> </pre>
+
+<pre> <label>Order date :</label>
+<input type = "text" id= "date" name="date" placeholder ="26/01/2017" > </pre> 
+
+<pre><label>Contact number: </label>
+<input type = "text" id= "PhNo" name="PhNo" placeholder = "(02)0123456789" > </pre> 
+
+<pre> <label>Credit card number: <label> 
+<input type="text" id= "CardNo" name="CardNo" placeholder = "1234-5678-1234-5678" > </pre> 
+
+<pre> <label>Expiry date: </label>
+<small style="color:grey" > month</small> 
+<input type="text" id= "month" name="month" placeholder= "01,..12"> 
+<small style= "color:grey" > year</small> 
+<input type="text" id= "year" name="year"placeholder = "2017...2027" > </pre> 
+
+<pre> <label>CVV number: </label>
+<input type = "text" id= "Cvv" name="Cvv" placeholder = "036"> </pre>
+
+<br/> 
+<input type = "submit" value = "Buy Now"> 
+</form> 
+
+<script>
+function validateForm()
+{
+	var name = document.getElementById("name").value;
+	var date = document.getElementById("date").value;
+	var PhNo = document.getElementById("PhNo").value;
+	var CardNo = document.getElementById("CardNo").value;
+	var month = document.getElementById("month").value;
+	var year = document.getElementById("year").value;
+	var Cvv = document.getElementById("Cvv").value;
+	
+	var nameReg = /^[a-zA-Z][a-zA-Z ]+$/; 
+	var dateReg = /^(0[1-9]|1[1-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/20(1[7-9]|2[0-7])$/;
+	var PhNoReg = /^\(\d{2}\)\d{10}$/;
+	var CardNoReg = /^\d{4}-\d{4}-\d{4}-\d{4}$/;
+	var monthReg = /^(0[0-9]|1[0-2])$/;
+	var yearReg = /^20(1[7-9]|2[0-7])$/;
+	var CvvReg = /^\d{3}$/;
+	
+	var nameResult = nameReg.test(name);
+	var dateResult = dateReg.test(date);
+	var PhNoResult = PhNoReg.test(PhNo);
+	var CardNoResult = CardNoReg.test(CardNo);
+	var monthResult = monthReg.test(month);
+	var yearResult = yearReg.test(year);
+	var CvvResult = CvvReg.test(Cvv);
+
+	if (nameResult == false)
+	{
+		alert("Name does not match the pattern");
+		return false;
+	}
+	if ( dateResult == false)
+	{
+		alert("Date does not match the pattern");
+		return false;
+	}
+	if ( PhNoResult == false)
+	{
+		alert("Contact No does not match the pattern");
+		return false;
+	}
+	if (CardNoResult == false){
+		alert("Card No does not match the pattern");
+		return false;
+	}
+	 if (monthResult == false)
+	 {
+		alert("Expiry Month does not match the pattern");
+		return false;
+	}
+	if (yearResult == false)
+	{
+		alert("Expiry Year does not match the pattern");
+		return false;
+	}
+	if (CvvResult == false)
+	{
+		alert("Cvv does not match the pattern");
+		return false;
+	}
+		return true;
+}	
+</script>
+
+</body>
+</html>  

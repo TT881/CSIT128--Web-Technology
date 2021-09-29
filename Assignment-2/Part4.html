@@ -1,0 +1,102 @@
+<h3>Part 4</h3>
+<html> 
+<style> 
+.row
+{
+	display: flex;
+	align-items: center; 
+
+}
+.row >.leftbox
+{
+	display: inline-block;
+	background-color: black;
+	width: 400px;
+	height: 200px;
+	text-align: center;			  <!--  To center the text alignment  -->
+	vertical-align: middle;  
+	color: white;     
+	line-height : 200px;	
+	margin-right: 100px;
+
+}
+.row >.rightbox
+{
+	display: inline-block;
+	background-color: grey;
+	width: 400px;
+	height: 200px;
+	text-align: center;			  <!--  To center the text alignment  -->
+	vertical-align: middle;      
+	line-height : 200px;
+	color : white;	
+	margin-left: 100px;
+	margin-right: 50px;
+	
+}
+.row.Arrbutton
+{ 
+	padding : 20px;
+	display: flex;
+	margin-top: 30px;
+	margin-right: 50px;
+	
+}
+
+</style> 
+<body> 
+	<button type= "button" onclick= "return startFunction()">Start</button>
+	<button type= "button" onclick= "return clearFunction()">Clear</button> <br/></br>
+	
+<div class = "row" > 
+	<div id = "LeftName" class = "leftbox" ></div> 
+	
+	<div class= "Arrbutton"> 	
+		<button type= "button" onclick= "return Right()"> --&gt; </button> <br/> <br/>
+		<button type "button" onclick= "return Left()"> &lt;-- </button> 
+	</div> 
+	
+	<div id ="RightName" class = "rightbox"></div> 
+	
+</div>
+ 
+<script>
+function startFunction()
+{
+	var name = prompt("Enter your name: ");
+	if ( name != null)
+	{
+		document.getElementById("LeftName").innerHTML = name;    <!-- Assign the user name to LeftBox -->
+			
+	}
+}
+function Right()
+{
+	var LeftPanel = document.querySelector(".row >.leftbox");               <!-- Select the element from Leftbox -->
+	document.getElementById("RightName").innerHTML = LeftPanel.textContent;  <!-- Assign to Rightbox  -->
+	
+	var LeftPanel = document.querySelector(".row> .leftbox");            <!-- Select & clear the element in LeftBox -->
+	var left = ""; 
+	document.getElementById("LeftName").innerHTML = left;
+	
+}
+function Left()
+{
+	var RightPanel = document.querySelector(".row >.rightbox");    <!-- Select the element from Rightbox  -->
+	document.getElementById("LeftName").innerHTML = RightPanel.textContent;    <!-- Assign it to LeftBox again -->
+	
+	var RightPanel = document.querySelector(".row >.rightbox");  <!-- Select & clear the element in RightBox  -->
+	var right = "";
+	document.getElementById("RightName").innerHTML = right; 
+}
+function clearFunction()
+{
+	document.getElementById("LeftName").innerHTML = null; <!-- Clear LeftBox -->
+	document.getElementById("RightName").innerHTML = null; <!-- Clear RightBox -->
+}
+</script> 
+
+
+
+</body>
+</html> 

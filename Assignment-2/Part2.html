@@ -1,0 +1,51 @@
+<h3> Part-2 </h3> 
+<html> 
+<style> 
+.submit
+{ 
+	background-color: #17BCC3 ;
+    border: 1px;
+    border-radius: 3px;
+	width: 10%;
+	height: 30px;
+	color : white;
+ 
+} 
+.text
+{
+	border-radius: 3px; 
+	height: 40px;
+	width : 30%
+} 
+</style> 
+
+<body>
+<form action="myService" method = "get" > 
+<pre> 
+<label>Customer name: </label>
+<input type = "text" class="text" name ="name" pattern= "^[a-zA-Z][a-zA-Z ]+$" required > </pre> 
+
+<pre> <label>Order date :</label>
+<input type = "text" class="text" name="date"  pattern="^(0[1-9]|1[1-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/20(1[7-9]|2[0-7])$" required> </pre> 
+
+<pre><label>Contact number: </label>
+<input type = "text" class="text" name="PhNo"  pattern="^\(\d{2}\)\d{10}$" required> </pre>   
+
+<pre> <label>Credit card number: <label> 
+<input  type="text" class="text" name="CardNo" pattern="^\d{4}-\d{4}-\d{4}-\d{4}$" required> </pre> 
+
+<pre> <label>Expiry date: </label>
+<small style= "color:grey" > month</small> 
+<input type="text" class="text" name="month" pattern="^(0[0-9]|1[0-2])$" required> 
+<small style= "color:grey" > year</small> 
+<input type="text" class="text" name="year"  pattern="^20(1[7-9]|2[0-7])$" required> </pre> 
+
+<pre> <label>CVV number: </label>
+<input type = "text" class="text" name="Cvv" pattern="^\d{3}$" required> </pre>
+
+<br/> 
+<input type = "submit" class="submit" value = "Buy Now"> 
+</form> 
+
+</body>
+</html>  

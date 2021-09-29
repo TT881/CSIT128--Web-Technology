@@ -1,0 +1,115 @@
+<html>
+    <body>
+        <p>Part-2</p>
+        <button onclick="return startGame();">Start Game</button>&nbsp;&nbsp;
+        <button onclick="return stopGame();">Stop Game</button><br/>
+        <div id="Game">
+            <br/>
+            <font id="description" style="font-size:200%;">
+
+            </font>
+            <font style="font-size:600%;">
+                <span id="num1" style="color:red;" onclick="Checking(num1);"></span>&nbsp;
+                <span id="num2" style="color:orange;"onclick="Checking(num2);"></span>&nbsp;
+                <span id="num3" style="color:blue;"onclick="Checking(num3);"></span>&nbsp;
+              <br/>
+            </font>
+
+        </div>
+
+<script>
+    var PlayTime = 0;
+    var score = 0;
+	var num1;
+    var num2;
+    var num3;
+    var chosenNum;
+    var Interval_time;
+   
+    function PlayGame(num)
+	{
+        if(PlayTime > 1)
+		{
+            document.getElementById("numChosen").innerHTML = num;
+            document.getElementById("score").innerHTML = score;
+            return 0;
+        }
+     <!-- Display User Chosen Num: -->
+        var SpanText1  = document.createElement("span");
+        var SpanNo1  = document.createElement("span");
+        SpanNo1 .style.color = "green";
+        SpanNo1 .id = "numChosen";
+        var Text1  = document.createTextNode("Your chosen number is: ")
+        var No1 = document.createTextNode(num);
+		
+        SpanText1 .appendChild(Text1 );
+        document.getElementById("description").appendChild(SpanText1 );
+        SpanNo1 .appendChild(No1);
+        document.getElementById("description").appendChild(SpanNo1 );
+        document.getElementById("description").appendChild(document.createElement('br'));
+        
+     <!-- Display User's Total Score: -->
+        var SpanText2  = document.createElement("span");
+        var SpanNo2 = document.createElement("span");
+        SpanNo2.style.color = "red";
+        SpanNo2.id = "score";
+        
+        var Text2  = document.createTextNode("Your score so far: ")
+        var NO2 = document.createTextNode(score);
+        SpanText2 .appendChild(Text2 );
+        document.getElementById("description").appendChild(SpanText2 );
+        SpanNo2.appendChild(NO2);
+        document.getElementById("description").appendChild(SpanNo2);
+        document.getElementById("description").appendChild(document.createElement('br'));
+    }
+
+    function GenerateNo()
+	{
+        num1 = Math.floor(Math.random() * 9);
+        num2 = Math.floor(Math.random() * 9);
+        num3 = Math.floor(Math.random() * 9);
+        
+        while(num1== num2 || num2 == num3|| num1 == num3)
+		{
+			num1 = Math.floor(Math.random() * 9);
+			num2 = Math.floor(Math.random() * 9);
+			num3 = Math.floor(Math.random() * 9);
+		}
+			document.getElementById("num1").innerHTML = num1; 
+			document.getElementById("num2").innerHTML = num2;
+			document.getElementById("num3").innerHTML = num3;
+			
+			document.getElementById("score").innerHTML = score;
+    }
+
+    function Checking(num)
+	{
+        if(num == chosenNum)
+		{
+            score++;
+        }
+		else
+		{
+            score--;
+        }
+    }
+
+    function startGame()
+	{
+        PlayTime++;
+        chosenNum = Number(prompt("Choose an integer from 0 to 9"));
+        var newGame = PlayGame(chosenNum);
+        Interval_time = setInterval(GenerateNo,2000);
+        return false;
+    }
+
+    function stopGame()
+	{
+        clearInterval(Interval_time);
+        score = 0;					  <!-- Set Score to '0'-->
+
+    }
+    
+</script>
+    </body>
+</html>

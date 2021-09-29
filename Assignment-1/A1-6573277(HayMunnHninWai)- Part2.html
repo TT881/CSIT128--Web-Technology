@@ -1,0 +1,110 @@
+<head>
+	<title>Part2</title>
+</head>
+
+Part 2: form 1 
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	*{
+		box-sizing : border-box;
+	} 
+	.column {
+	  float: left;
+	  width: 35%;
+	  padding: 10px;
+	  height: 600px;
+	  font-size : 70%;  
+	}
+	.row:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	
+	h3,h5{color: white;} 
+	
+	input[type=text]      
+	{
+	  width: 100%;
+	  padding:5px ;
+
+	}
+	input[type=text2]    
+	{
+	  width: 30%;
+	  padding: 5px ;
+	  
+	}
+	input[type=text3]    
+	{
+	  width: 15%;
+	  padding: 5px;
+	  
+	}
+</style> 
+</head> 
+
+<body>
+<!-- Two Equal Columns -->
+<div class="row">
+  <div class="column" style= "background-color:#80A4D2;"> 
+	<form> 
+	<p align ="center"><b style= "font-size:20px;">Choose Advanced Search Options </b></p>
+	<input type = "checkbox" name = "options" value="MSR">Multi-Subject Resources<br/>
+	<input type = "checkbox" name = "options" value="DAT">Dissertations and Theses<br/>
+	<input type = "checkbox" name = "options" value="CNS">Current News Sources<br/> 
+	<input type = "checkbox" name = "options" value="B">Books<br/>
+	<input type = "checkbox" name= "options" value="AHA">Arts & Humanities Articles<br/>
+	<input type= "checkbox" name= "options" value="BA"> Business Articles<br/>
+	<input type= "checkbox" name= "options" value="EA">Education Articles<br/> 
+	<input type= "checkbox" name= "options" value="EngA">Engineering Articles<br/>
+	<input type= "checkbox" name= "options" value="HSA">Health Sciences Articles<br/>
+	<input type= "checkbox" name= "options" value="IASA">International and Area Studies Articles<br/>
+	<input type= "checkbox" name= "options" value="LSA">Life Sciences Articles<br/>
+	<input type= "checkbox" name= "options" value="LISA">Library & Information Science Articles<br/>
+	<input type= "checkbox" name= "options" value="PS/MA">Physical Sciences/Math Articles<br/>
+	<input type= "checkbox" name= "options" value="SSA">Social Sciences Articles <br/>
+	<input type= "checkbox" name= "options" value="WSE">Web Search Engines<br/>
+	<input type= "checkbox" name= "options" value="DE">Dictionaries,Encyclopedias,etc<br/>
+	<input type= "checkbox" name= "options" value="Image">Image Search<br/>
+	<input type= "checkbox" name= "options" value="Data">Datasets<br/>
+	</form> 
+	</div> 
+	
+	<div class="column" style = "background-color:#39587E;">
+	<form action="handle_login"method="post"> 
+	<h3 align = "center"> Enter Advanced Search Terms </h3>
+	<h5 align = "center"> Keyboards </h5>
+	<input type="text" name="Keyboards" >
+	<h5 align = "center"> Title Words:</h5>
+	<input type="text" name="title" >
+	<h5 align = "center"> Author's Name:</h5>
+	<h5>Last name &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;First name &emsp;&emsp;&emsp;&emsp;&emsp;Initial </h5>
+	<input type="text2" name="lastname"> 
+	<input type="text2" name="firstname"> 
+	<input type="text3" name="initial"> 
+	<br/> <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	<input type= "submit" value = "Perform Search" > 
+	</form> 
+	</div> 
+</div>
+	
+</body>
+</html> 
+
+
+	
+
+	
+  
+
+
+
+ 
+
+
+
+
+	
